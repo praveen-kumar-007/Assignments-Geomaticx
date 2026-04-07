@@ -1,0 +1,98 @@
+.map-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.map-with-form {
+  position: relative;
+  height: 100vh;
+}
+
+.map-right-panels {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  width: 320px;
+  display: grid;
+  gap: 10px;
+  max-height: calc(100vh - 24px);
+}
+
+.map-form-panel {
+  position: relative;
+  width: 100%;
+  max-height: 46vh;
+  overflow: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.map-form {
+  display: grid;
+  gap: 8px;
+}
+
+.map-form label {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.map-form input,
+.map-form textarea,
+.map-form button {
+  padding: 7px;
+}
+
+.saved-shapes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.saved-shape-item {
+  display: grid;
+  gap: 6px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.saved-shape-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.map-details-panel {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1000;
+  width: 340px;
+  max-height: 40vh;
+  overflow: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.shape-details-grid {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.shape-details-grid p {
+  margin: 0;
+}
