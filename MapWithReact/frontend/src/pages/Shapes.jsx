@@ -266,7 +266,9 @@ function Shapes() {
               readOnly
               rows={6}
               value={(viewShape.coordinates || [])
-                .map((point, index) => `${index + 1}. ${point.lat}, ${point.lng}`)
+                .map(
+                  (point, index) => `${index + 1}. ${point.lat}, ${point.lng}`,
+                )
                 .join("\n")}
             />
             <button type="button" onClick={() => setViewShape(null)}>
