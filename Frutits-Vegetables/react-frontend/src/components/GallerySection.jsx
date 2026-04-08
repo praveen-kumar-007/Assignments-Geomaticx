@@ -2,13 +2,14 @@ import { galleryImages } from "../data/siteData";
 
 import React from "react";
 
-function Gallery() {
+function Gallery({ showTitle = true }) {
   return (
     <div className="gallery">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
             <div className="titlepage">
+              {showTitle && <h2>Gallery</h2>}
               <span>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy

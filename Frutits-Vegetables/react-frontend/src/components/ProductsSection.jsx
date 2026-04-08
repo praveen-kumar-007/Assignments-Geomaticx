@@ -1,13 +1,14 @@
 import React from "react";
 import { products } from "../data/siteData";
 
-function ProductsSection() {
+function ProductsSection({ showTitle = true }) {
   return (
     <div className="products">
       <div className="container">
         <div className="row">
           <div className="col-md-7">
             <div className="titlepage">
+              {showTitle && <h2>Our Products</h2>}
               <span>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna

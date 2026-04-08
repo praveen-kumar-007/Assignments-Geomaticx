@@ -6,7 +6,7 @@ function About() {
   return (
     <>
       <PageBanner title="About Us" />
-      <AboutSection />
+      <AboutSection showTitle={false} />
     </>
   );
 }

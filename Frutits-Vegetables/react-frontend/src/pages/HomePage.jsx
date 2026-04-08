@@ -3,6 +3,7 @@ import AboutSection from "../components/AboutSection";
 import ProductsSection from "../components/ProductsSection";
 import Using from "../components/Using";
 import Gallery from "../components/GallerySection";
+import ContactSection from "../components/ContactSection";
 
 function HomePage() {
   return (
@@ -12,6 +13,7 @@ function HomePage() {
       <ProductsSection />
       <Using />
       <Gallery />
+      <ContactSection />
     </>
   );
 }

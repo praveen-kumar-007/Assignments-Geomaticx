@@ -6,7 +6,7 @@ function Contact() {
   return (
     <>
       <PageBanner title="Contact Us" />
-      <ContactSection />
+      <ContactSection showTitle={false} />
     </>
   );
 }

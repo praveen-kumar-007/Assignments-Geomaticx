@@ -6,7 +6,7 @@ function Product() {
   return (
     <>
       <PageBanner title="Our Products" />
-      <ProductsSection />
+      <ProductsSection showTitle={false} />
     </>
   );
 }

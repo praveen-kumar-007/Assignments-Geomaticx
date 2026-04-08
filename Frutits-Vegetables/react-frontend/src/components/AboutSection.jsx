@@ -1,10 +1,11 @@
-function AboutSection() {
+function AboutSection({ showTitle = true }) {
   return (
     <div id="about" className="about">
       <div className="container">
         <div className="row">
           <div className="col-md-6 offset-md-3">
             <div className="titlepage">
+              {showTitle && <h2>About Us</h2>}
               <span>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna

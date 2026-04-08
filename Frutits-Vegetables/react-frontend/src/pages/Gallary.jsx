@@ -6,7 +6,7 @@ function Gallary() {
   return (
     <>
       <PageBanner title="Gallery" />
-      <Gallery />
+      <Gallery showTitle={false} />
     </>
   );
 }

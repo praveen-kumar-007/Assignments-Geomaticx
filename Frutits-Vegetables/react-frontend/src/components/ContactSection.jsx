@@ -1,10 +1,19 @@
 import React from "react";
 
-function ContactSection() {
+function ContactSection({ showTitle = true }) {
   return (
     <div className="contact-page">
       <div className="contact">
         <div className="container">
+          {showTitle && (
+            <div className="row">
+              <div className="col-md-12">
+                <div className="titlepage">
+                  <h2>Contact Us</h2>
+                </div>
+              </div>
+            </div>
+          )}
           <div className="row">
             <div className="col-md-6 padding_right0">
               <div className="map_main">
