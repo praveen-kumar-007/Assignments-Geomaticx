@@ -639,7 +639,7 @@ button {
   width: 100%;
   height: 44px;
   background: #fff;
-  color: #dadada;
+  color: #000000;
   font-size: 17px;
   font-weight: normal;
   box-shadow: 0px 0px 18px rgba(22, 22, 23, 0.11);
@@ -650,7 +650,7 @@ button {
   margin-bottom: 25px;
   width: 100%;
   background: #fff;
-  color: #dadada;
+  color: #000000;
   font-size: 17px;
   font-weight: normal;
   padding: 25px 20px 0 20px;
@@ -658,9 +658,10 @@ button {
   height: 86px;
 }
 
-.main_form .send_btn {
+.main_form .send_btn,
+.send_btn {
   font-size: 20px;
-  transition: ease-in all 0.5s;
+  transition: background-color 0.5s ease, transform 0.5s ease;
   background-color: #000000;
   text-transform: uppercase;
   color: #fff;
@@ -670,12 +671,14 @@ button {
   display: block;
   margin-top: 10px !important;
   font-weight: 500;
+  cursor: pointer;
 }
 
-.main_form .send_btn:hover {
+.main_form .send_btn:hover,
+.send_btn:hover {
   background-color: #ff3556;
-  transition: ease-in all 0.5s;
   color: #fff;
+  transform: translateY(-2px);
 }
 
 #request *::placeholder {

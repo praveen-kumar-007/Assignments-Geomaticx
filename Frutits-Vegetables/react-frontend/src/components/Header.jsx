@@ -1,10 +1,29 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { navLinks } from "../data/siteData";
+import { getCart } from "../utils/cartUtils";
 
 function Header() {
   const location = useLocation();
+  const [cartCount, setCartCount] = useState(0);
   const headerClassName =
     location.pathname === "/" ? "full_bg home_header" : "full_bg";
+
+  useEffect(() => {
+    const updateCount = () => {
+      const cart = getCart();
+      setCartCount(cart.reduce((sum, item) => sum + item.quantity, 0));
+    };
+
+    updateCount();
+    window.addEventListener("cartUpdated", updateCount);
+    window.addEventListener("storage", updateCount);
+
+    return () => {
+      window.removeEventListener("cartUpdated", updateCount);
+      window.removeEventListener("storage", updateCount);
+    };
+  }, []);
 
   return (
     <header className={headerClassName}>
@@ -44,6 +63,21 @@ function Header() {
                           }
                         >
                           {item.label}
+                          {item.to === "/cart" && cartCount > 0 && (
+                            <span
+                              style={{
+                                display: "inline-block",
+                                marginLeft: "8px",
+                                padding: "2px 7px",
+                                fontSize: "0.8rem",
+                                color: "#fff",
+                                backgroundColor: "#dc3545",
+                                borderRadius: "12px",
+                              }}
+                            >
+                              {cartCount}
+                            </span>
+                          )}
                         </NavLink>
                       </li>
                     ))}
