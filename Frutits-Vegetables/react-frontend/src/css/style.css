@@ -661,7 +661,9 @@ button {
 .main_form .send_btn,
 .send_btn {
   font-size: 20px;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  transition:
+    background-color 0.5s ease,
+    transform 0.5s ease;
   background-color: #000000;
   text-transform: uppercase;
   color: #fff;

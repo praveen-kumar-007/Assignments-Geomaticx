@@ -1,9 +1,11 @@
 import React from "react";
 import { products } from "../data/siteData";
 import PageBanner from "../components/PageBanner";
-import { addToCart } from "../utils/cartUtils";
+import { useCart } from "../context/CartContext";
 
 function Product() {
+  const { addToCart } = useCart();
+
   const handleAddToCart = (product) => {
     addToCart(product);
   };

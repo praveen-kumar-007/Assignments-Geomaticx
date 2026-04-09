@@ -1,29 +1,12 @@
-import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { navLinks } from "../data/siteData";
-import { getCart } from "../utils/cartUtils";
+import { useCart } from "../context/CartContext";
 
 function Header() {
   const location = useLocation();
-  const [cartCount, setCartCount] = useState(0);
+  const { cartCount } = useCart();
   const headerClassName =
     location.pathname === "/" ? "full_bg home_header" : "full_bg";
-
-  useEffect(() => {
-    const updateCount = () => {
-      const cart = getCart();
-      setCartCount(cart.reduce((sum, item) => sum + item.quantity, 0));
-    };
-
-    updateCount();
-    window.addEventListener("cartUpdated", updateCount);
-    window.addEventListener("storage", updateCount);
-
-    return () => {
-      window.removeEventListener("cartUpdated", updateCount);
-      window.removeEventListener("storage", updateCount);
-    };
-  }, []);
 
   return (
     <header className={headerClassName}>

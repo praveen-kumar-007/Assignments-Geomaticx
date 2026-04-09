@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PageBanner from "../components/PageBanner";
-import { clearCart, getCart } from "../utils/cartUtils";
+import { useCart } from "../context/CartContext";
 
 function Cart() {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    setCartItems(getCart());
-  }, []);
+  const { cartItems, clearCart } = useCart();
 
   const handleClearCart = () => {
-    setCartItems(clearCart());
+    clearCart();
   };
 
   const totalAmount = cartItems.reduce(
@@ -33,7 +29,11 @@ function Cart() {
             <>
               <div className="row">
                 <div className="col-md-12">
-                  <button className="send_btn" type="button" onClick={handleClearCart}>
+                  <button
+                    className="send_btn"
+                    type="button"
+                    onClick={handleClearCart}
+                  >
                     Clear Cart
                   </button>
                 </div>
@@ -50,7 +50,9 @@ function Cart() {
                       <h3>{item.title}</h3>
                       <p>Price: ₹{item.price.toFixed(2)}</p>
                       <p>Quantity: {item.quantity}</p>
-                      <p>Subtotal: ₹{(item.price * item.quantity).toFixed(2)}</p>
+                      <p>
+                        Subtotal: ₹{(item.price * item.quantity).toFixed(2)}
+                      </p>
                     </div>
                   </div>
                 ))}
